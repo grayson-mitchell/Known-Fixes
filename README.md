@@ -29,7 +29,6 @@ https://raw.githubusercontent.com/grayson-mitchell/known-fixes/main/<store>/<app
 | `gog`     | the GOG product id              |
 | `amazon`  | the Nile id                     |
 | `steam`   | the Steam appId, e.g. `284100`  |
-| `zoom`    | the Zoom id                     |
 
 ## Allowed keys
 
