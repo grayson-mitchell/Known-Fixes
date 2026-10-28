@@ -41,9 +41,17 @@ A file may carry only these keys:
 - `envVariables` - environment variables set at launch
 - `wikiLink` - link to further documentation
 - `launchNotice` - text shown in the UI before launch
+- `macArch` - `"32"` only: the Mac build is 32-bit, so on Apple silicon GameLib installs the
+  Windows build instead (routing only)
+- `drm` - `"ceg"` only: the game uses Steam CEG DRM, so GameLib sends it to bottled Steam before
+  any download (routing only)
+
+`macArch` and `drm` change only where a game is installed or launched from. A file that carries
+nothing but `title`, `notes` and these two keys is a routing hint, not a fix, and GameLib does not
+show it as one.
 
 Any other key is dropped by GameLib with a warning. Tier-2 keys (`registry`,
-`steamSharedRedists`, `evidence`, and in future `dllOverrides`, `overlays`, `shimFeatures`,
+`steamSharedRedists`, `evidence`, `overlays`, `shimFeatures`, and in future `dllOverrides` and
 `platforms`) belong in `<appName>-<store>.profile.json`, which is local and bundled only and is
 never fetched. Putting them here does nothing.
 
